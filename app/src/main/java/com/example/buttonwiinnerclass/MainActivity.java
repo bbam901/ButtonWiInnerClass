@@ -3,6 +3,7 @@ package com.example.buttonwiinnerclass;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,5 +21,16 @@ public class MainActivity extends AppCompatActivity {
         mTextView1 = findViewById(R.id.textView1);
 
         mButton1.setOnClickListener(new MyOnClickListener(this));
+    }
+
+    private class MyOnClickListener implements View.OnClickListener {
+        public MyOnClickListener(MainActivity mainActivity) {
+        }
+
+        @Override
+        public void onClick(View v) {
+            mTextView1.setText("You Clicked BG's buttton!");
+
+        }
     }
 }
